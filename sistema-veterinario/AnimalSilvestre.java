@@ -1,14 +1,26 @@
 public abstract class AnimalSilvestre implements Animal{
+    private Long id;
     private String habitatNatural;
     private String origem;
     private String dietaPadrao;
 
     public abstract void exibirInfo();
 
-    public AnimalSilvestre(String habitatNatural, String origem, String dietaPadrao) {
+
+    public AnimalSilvestre(Long id, String habitatNatural, String origem, String dietaPadrao) {
+        this.id = id;
         this.habitatNatural = habitatNatural;
         this.origem = origem;
         this.dietaPadrao = dietaPadrao;
+    }
+    
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getHabitatNatural() {

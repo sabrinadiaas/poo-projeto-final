@@ -2,9 +2,9 @@ public class TartarugaMarinha extends AnimalSilvestre {
     private Double comprimentoCasco;
     private String localEncalhe;
 
-    public TartarugaMarinha(String habitatNatural, String origem, String dietaPadrao, 
+    public TartarugaMarinha(Long id, String habitatNatural, String origem, String dietaPadrao, 
         Double comprimentoCasco, String localEncalhe) {
-        super(habitatNatural, origem, dietaPadrao);
+        super(id, habitatNatural, origem, dietaPadrao);
         this.comprimentoCasco = comprimentoCasco;
         this.localEncalhe = localEncalhe;
     }

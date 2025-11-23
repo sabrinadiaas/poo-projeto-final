@@ -1,9 +1,9 @@
 public class Serpente extends AnimalSilvestre{
     private Double comprimento;
 
-    public Serpente(String habitatNatural, String origem, String dietaPadrao, 
+    public Serpente(Long id, String habitatNatural, String origem, String dietaPadrao, 
         Double comprimento) {
-        super(habitatNatural, origem, dietaPadrao);
+        super(id, habitatNatural, origem, dietaPadrao);
         this.comprimento = comprimento;
     }
 

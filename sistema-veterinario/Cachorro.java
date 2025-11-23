@@ -2,8 +2,8 @@ public class Cachorro extends AnimalDomestico {
     private String raca;
     private String porte;
 
-    public Cachorro(String nome, Integer idade, Double peso, String raca, String porte) {
-        super(nome, idade, peso);
+    public Cachorro(Long id, String nome, Integer idade, Double peso, String raca, String porte) {
+        super(id, nome, idade, peso);
         this.raca = raca;
         this.porte = porte;
     }

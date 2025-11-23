@@ -2,8 +2,8 @@ public class Gato extends AnimalDomestico {
     private String pelagem;
 
 
-    public Gato(String nome, Integer idade, Double peso, String pelagem) {
-        super(nome, idade, peso);
+    public Gato(Long id, String nome, Integer idade, Double peso, String pelagem) {
+        super(id, nome, idade, peso);
         this.pelagem = pelagem;
     }
 
