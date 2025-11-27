@@ -1,0 +1,65 @@
+CREATE DATABASE IF NOT EXISTS sistema_animais;
+USE sistema_animais;
+
+CREATE TABLE IF NOT EXISTS animais_domesticos (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    idade INT,
+    peso DECIMAL(5,2),
+    tipo VARCHAR(20) NOT NULL,
+    raca VARCHAR(50),
+    porte VARCHAR(20),
+    pelagem VARCHAR(50),
+    data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS animais_silvestres (
+    id BIGINT PRIMARY KEY AUTO_INCREMENT,
+    habitat_natural VARCHAR(100) NOT NULL,
+    origem VARCHAR(100),
+    dieta_padrao VARCHAR(100),
+    tipo VARCHAR(20) NOT NULL,
+    comprimento DECIMAL(5,2),
+    comprimento_casco DECIMAL(5,2),
+    local_encalhe VARCHAR(100),
+    data_cadastro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+INSERT INTO animais_domesticos (nome, idade, peso, tipo, raca, porte) 
+VALUES ('Rex', 3, 15.5, 'CACHORRO', 'Labrador', 'Médio');
+
+INSERT INTO animais_domesticos (nome, idade, peso, tipo, pelagem) 
+VALUES ('Mimi', 2, 4.2, 'GATO', 'Siamês');
+
+INSERT INTO animais_silvestres (habitat_natural, origem, dieta_padrao, tipo, comprimento) 
+VALUES ('Floresta Tropical', 'Amazônia', 'Carnívora', 'SERPENTE', 2.5);
+
+INSERT INTO animais_silvestres (habitat_natural, origem, dieta_padrao, tipo, comprimento_casco, local_encalhe) 
+VALUES ('Oceano', 'Atlântico', 'Herbívora', 'TARTARUGA_MARINHA', 0.8, 'Praia do Futuro');
+
+SELECT * FROM animais_domesticos;
+
+SELECT * FROM animais_silvestres;
+
+SELECT * FROM animais_domesticos WHERE tipo = 'CACHORRO';
+
+SELECT * FROM animais_domesticos WHERE tipo = 'GATO';
+
+SELECT * FROM animais_silvestres WHERE tipo = 'SERPENTE';
+
+SELECT * FROM animais_silvestres WHERE tipo = 'TARTARUGA_MARINHA';
+
+SELECT * FROM animais_domesticos WHERE id = 1;
+SELECT * FROM animais_silvestres WHERE id = 1;
+
+UPDATE animais_domesticos 
+SET nome = 'Rex Atualizado', idade = 4, peso = 16.5, raca = 'Labrador Retriever'
+WHERE id = 1 AND tipo = 'CACHORRO';
+
+UPDATE animais_silvestres 
+SET comprimento = 3.0, dieta_padrao = 'Carnívora Especial'
+WHERE id = 1 AND tipo = 'SERPENTE';
+
+DELETE FROM animais_domesticos WHERE id = 1;
+
+DELETE FROM animais_silvestres WHERE id = 1;
