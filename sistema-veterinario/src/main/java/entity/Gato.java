@@ -1,3 +1,5 @@
+package entity;
+
 public class Gato extends AnimalDomestico {
     private String pelagem;
 

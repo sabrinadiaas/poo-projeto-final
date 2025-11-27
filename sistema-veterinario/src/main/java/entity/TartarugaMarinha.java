@@ -1,3 +1,5 @@
+package entity;
+
 public class TartarugaMarinha extends AnimalSilvestre {
     private Double comprimentoCasco;
     private String localEncalhe;

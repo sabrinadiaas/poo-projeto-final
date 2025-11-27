@@ -1,9 +1,12 @@
+package entity;
+
 public abstract class AnimalDomestico implements Animal{
     private Long id;
     private String nome;
     private Integer idade;
     private Double peso;
 
+    @Override
     public abstract void exibirInfo();
 
     public AnimalDomestico(Long id, String nome, Integer idade, Double peso) {

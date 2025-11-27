@@ -1,3 +1,5 @@
+package entity;
+
 public class Cachorro extends AnimalDomestico {
     private String raca;
     private String porte;

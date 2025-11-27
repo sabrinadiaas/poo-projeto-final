@@ -1,9 +1,12 @@
+package entity;
+
 public abstract class AnimalSilvestre implements Animal{
     private Long id;
     private String habitatNatural;
     private String origem;
     private String dietaPadrao;
 
+    @Override
     public abstract void exibirInfo();
 
 

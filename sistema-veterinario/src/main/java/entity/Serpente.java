@@ -1,3 +1,5 @@
+package entity;
+
 public class Serpente extends AnimalSilvestre{
     private Double comprimento;
 
