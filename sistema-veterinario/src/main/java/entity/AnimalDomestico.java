@@ -1,13 +1,22 @@
 package entity;
 
-public abstract class AnimalDomestico implements Animal{
+import javax.persistence.*;
+
+// tag pro banco de dados
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class AnimalDomestico implements Animal {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
     private String nome;
     private Integer idade;
     private Double peso;
 
-    @Override
-    public abstract void exibirInfo();
+    //Construtor hibernate
+    public AnimalDomestico() {
+    }
 
     public AnimalDomestico(Long id, String nome, Integer idade, Double peso) {
         this.id = id;
@@ -16,6 +25,10 @@ public abstract class AnimalDomestico implements Animal{
         this.peso = peso;
     }
 
+    @Override
+    public abstract void exibirInfo();
+
+    // Getters e Setters
     public Long getId() {
         return this.id;
     }
@@ -47,6 +60,4 @@ public abstract class AnimalDomestico implements Animal{
     public void setPeso(Double peso) {
         this.peso = peso;
     }
-
-
 }

@@ -1,8 +1,16 @@
 package entity;
 
+import javax.persistence.Entity;
+
+// tag pro banco de dados
+@Entity
 public class TartarugaMarinha extends AnimalSilvestre {
     private Double comprimentoCasco;
     private String localEncalhe;
+
+    // Construtor hibernate
+    public TartarugaMarinha() {
+    }
 
     public TartarugaMarinha(Long id, String habitatNatural, String origem, String dietaPadrao, 
         Double comprimentoCasco, String localEncalhe) {
@@ -13,11 +21,13 @@ public class TartarugaMarinha extends AnimalSilvestre {
 
     @Override
     public void exibirInfo(){
+        System.out.println("ID: " + getId());
         System.out.println("Habitat natural: " + getHabitatNatural());
         System.out.println("Origem: " + getOrigem());
         System.out.println("Dieta padrão: " + getDietaPadrao());
-        System.out.println("Comprimento do casco: " + this.comprimentoCasco);
-        System.out.println("Local enchalhe: " + this.localEncalhe);
+        System.out.println("Comprimento do casco: " + this.comprimentoCasco + " cm");
+        System.out.println("Local encalhe: " + this.localEncalhe);
+        System.out.println("Tipo: Tartaruga Marinha");
     }
 
     public Double getComprimentoCasco() {
@@ -35,6 +45,4 @@ public class TartarugaMarinha extends AnimalSilvestre {
     public void setLocalEncalhe(String localEncalhe) {
         this.localEncalhe = localEncalhe;
     }
-
-    
 }
